@@ -7,6 +7,7 @@ cd D:\Уроки\python3\shelp_project
 
 
 
+
 Запуск
 cd /mnt/(путь как в примерах выше)
 gunicorn main:application
