@@ -15,4 +15,4 @@ def render(template_name, folder='templates', **kwargs):
         # Читаем
         template = Template(f.read())
     # рендерим шаблон с параметрами
-    return template.render(**kwargs).encode('utf-8')
+    return [template.render(**kwargs).encode('utf-8')]
