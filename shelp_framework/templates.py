@@ -1,6 +1,23 @@
-from jinja2 import Template
+from jinja2 import Template, FileSystemLoader
+from jinja2.environment import Environment
 import os
 
+
+def render(template_name, folder='templates', **kwargs):
+    env = Environment()
+    env.loader = FileSystemLoader(folder)
+    tmpl = env.get_template(template_name)
+    print([tmpl.render(**kwargs).encode('utf-8')])
+    return [tmpl.render(**kwargs).encode('utf-8')]
+
+
+
+
+
+'''
+from jinja2 import Template
+
+import os
 
 def render(template_name, folder='templates', **kwargs):
     """
@@ -15,4 +32,4 @@ def render(template_name, folder='templates', **kwargs):
         # Читаем
         template = Template(f.read())
     # рендерим шаблон с параметрами
-    return [template.render(**kwargs).encode('utf-8')]
+    return [template.render(**kwargs).encode('utf-8')]'''
