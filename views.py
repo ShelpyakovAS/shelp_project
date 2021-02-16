@@ -13,7 +13,7 @@ class Curses:
 
     def __call__(self, request):
         print(f'{request["site"].courses} - ЭТО КУРСЫ')
-        secret = request.get('secret_key', None)
+        secret = request["site"].courses
         return '200 OK', render('curses.html', secret=secret)
 
 
@@ -57,6 +57,7 @@ class CreateCategory:
             if data:
                 name = data['category-name']
                 request["site"].create_category(name)
+                print(request["site"].courses_category)
         secret = request.get('secret_key', None)
         return '200 OK', render('create-category.html', secret=secret)
 
@@ -68,9 +69,10 @@ class CreateCurse:
             data = request['data']
             if data:
                 name = data['curse-name']
-                category = request["site"].take_category(data['category'])
+                category = data['category']
                 request["site"].create_course(name, category)
         secret = request.get('secret_key', None)
+        print(f'{request["site"].courses} - ЭТО КУРСЫ')
         return '200 OK', render('create-curse.html', secret=secret)
 
 

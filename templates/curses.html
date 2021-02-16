@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block body %}
-    {% for curse in {{secret}} %}
-        <div class="curse">
-            <h1>{{curse.name}}(Тип: {{curse.category.name}})</h1>
-        </div>
-    {% endfor %}
+        {% for item in secret %}
+            <div class="curse">
+                <h1>{{item.name}}(Тип: {{item.category.name}})</h1>
+            </div>
+        {% endfor %}
+
 {% endblock %}

@@ -23,21 +23,28 @@ class ShelpSite:
             if self.courses_category:
                 if name == category.name:
                     print("Данное имя категории уже существует!")
-                    break
+                    return
         self.courses_category.append(Category(name))
         print(f'Категория - {name}, успешно создана!')
 
     def create_course(self, name, category_name):
-        if self.courses:
-            for course in self.courses:
-                if name == course.name:
-                    print("Данное имя курса уже занято!")
-                    break
+        for course in self.courses:
+            if name == course.name:
+                print("Данное имя курса уже занято!")
+                return
         if self.courses_category:
+            print("Я ТУТ")
             for category in self.courses_category:
+                print("Я ТУТ")
+                print(category.name)
+                print(type(category.name))
+                print(category_name)
+                print(type(category_name))
+                print(category.name == category_name)
                 if category.name == category_name:
+                    print("Я ТУТ")
                     self.courses.append(Course(name, category))
-                    break
+                    return
         print("Такой категории курса не существут!")
 
     def take_category(self, category_name):

@@ -7,7 +7,6 @@ def render(template_name, folder='templates', **kwargs):
     env = Environment()
     env.loader = FileSystemLoader(folder)
     tmpl = env.get_template(template_name)
-    print([tmpl.render(**kwargs).encode('utf-8')])
     return [tmpl.render(**kwargs).encode('utf-8')]
 
 
