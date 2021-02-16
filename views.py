@@ -1,18 +1,20 @@
 from shelp_framework.templates import render
+from logging_app import Logger
+
+
+logger =  Logger('views')
 
 
 class Index:
 
     def __call__(self, request):
         secret = request.get('secret_key', None)
-        print(request)
         return '200 OK', render('index.html', secret=secret)
 
 
 class Curses:
 
     def __call__(self, request):
-        print(f'{request["site"].courses} - ЭТО КУРСЫ')
         secret = request["site"].courses
         return '200 OK', render('curses.html', secret=secret)
 
@@ -26,7 +28,7 @@ class About:
                 title = data['title']
                 text = data['text']
                 email = data['email']
-                print(f'Нам пришло сообщение от {email} с темой {title} и текстом {text}')
+                logger.log(f'Нам пришло сообщение от {email} с темой {title} и текстом {text}')
             secret = request.get('secret_key', None)
             return '200 OK', render('about.html', secret=secret)
         else:
@@ -38,7 +40,6 @@ class Other:
 
     def __call__(self, request):
         secret = request.get('secret_key', None)
-        print(request)
         return '200 OK', render('other.html', secret=secret)
 
 
@@ -57,7 +58,7 @@ class CreateCategory:
             if data:
                 name = data['category-name']
                 request["site"].create_category(name)
-                print(request["site"].courses_category)
+                logger.log(request["site"].courses_category)
         secret = request.get('secret_key', None)
         return '200 OK', render('create-category.html', secret=secret)
 
@@ -72,7 +73,7 @@ class CreateCurse:
                 category = data['category']
                 request["site"].create_course(name, category)
         secret = request.get('secret_key', None)
-        print(f'{request["site"].courses} - ЭТО КУРСЫ')
+        logger.log(f'{request["site"].courses} - ЭТО КУРСЫ')
         return '200 OK', render('create-curse.html', secret=secret)
 
 

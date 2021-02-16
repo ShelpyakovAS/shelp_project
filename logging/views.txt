@@ -1,0 +1,13 @@
+LOG ---> [<models.Course object at 0x7f44db25d0a0>] - ЭТО КУРСЫ
+LOG ---> [<models.Category object at 0x7f2b503e6160>]
+LOG ---> [] - ЭТО КУРСЫ
+LOG ---> [<models.Course object at 0x7f2b50386940>] - ЭТО КУРСЫ
+LOG ---> [<models.Category object at 0x7f77448d6160>]
+LOG ---> [] - ЭТО КУРСЫ
+LOG ---> [<models.Course object at 0x7f7744876940>] - ЭТО КУРСЫ
+LOG ---> [<models.Category object at 0x7f1a28886be0>] ---> 1613499277.2864773
+LOG ---> [] - ЭТО КУРСЫ ---> 1613499277.9180539
+LOG ---> [<models.Course object at 0x7f1a28890c70>] - ЭТО КУРСЫ ---> 1613499280.1828132
+LOG ---> [<models.Category object at 0x7f38d72143d0>] ---> Tue Feb 16 23:17:29 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Feb 16 23:17:29 2021
+LOG ---> [<models.Course object at 0x7f38d7214040>] - ЭТО КУРСЫ ---> Tue Feb 16 23:17:32 2021
