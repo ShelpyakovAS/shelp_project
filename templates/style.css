@@ -8,11 +8,29 @@ body {
 }
 .main-menu a {
     display: inline-block;
-    width: 30%;
+    width: 18%;
     text-decoration: none;
     color: black;
-    padding: 5px 0;
+    padding: 10px 0;
 }
 .main-menu a:hover {
+    background-color: #a9f0f0;
+}
+.creation-menu {
+    text-align: center;
+    background-color:#c8fcfc;
+    margin: 10px 0;
+}
+.creation-menu a {
+    display: inline-block;
+    width: 45%;
+    text-decoration: none;
+    color: black;
+    padding: 10px 0;
+}
+.creation-menu a:hover {
+    background-color: #a9f0f0;
+}
+.active-link {
     background-color: #a9f0f0;
 }

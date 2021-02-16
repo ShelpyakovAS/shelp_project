@@ -1,7 +1,9 @@
 from views import Error404
+from models import ShelpSite
 
 
 class Application:
+    shelp_site = ShelpSite()
 
     def data_string_parse(self, data):
         query_request = {}
@@ -56,6 +58,7 @@ class Application:
             request['method'] = response_method
             request['data'] = data
             request['request_params'] = query_request
+            request['site'] = Application.shelp_site
             # front controller
             for front in self.fronts:
                 front(request)

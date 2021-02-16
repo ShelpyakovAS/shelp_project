@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+Меню управления
+{% endblock %}
+
+{% block body %}
+    {% include "inc-control-menu.html" %}
+    {% block body2 %}
+    {% endblock %}
+{% endblock %}
