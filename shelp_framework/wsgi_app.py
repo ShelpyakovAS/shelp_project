@@ -58,6 +58,7 @@ class Application:
             request['method'] = response_method
             request['data'] = data
             request['request_params'] = query_request
+            request['path'] = path
             request['site'] = Application.shelp_site
             # front controller
             for front in self.fronts:

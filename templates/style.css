@@ -34,3 +34,49 @@ body {
 .active-link {
     background-color: #a9f0f0;
 }
+.curse {
+    display: inline-block;
+    width: 45%;
+    height: 250px;
+    background-color: aquamarine;
+    border: 5px solid #9003f7;
+}
+.curse table {
+    text-align: center;
+    margin: auto;
+}
+.curse table td {
+    vertical-align: middle;
+    height: 250px;
+}
+.create-category {
+    padding: 20px;
+    float: left;
+    width: 45%;
+    text-align: center;
+}
+.create-curse {
+    padding: 20px;
+    float: right;
+    width: 45%;
+    text-align: center;
+}
+.create-category input, .create-curse input {
+    width: 100%;
+    padding: 10px 0;
+    border: 5px solid #c4e4f2;
+}
+.create-category input::placeholder, .create-curse input::placeholder {
+    text-align: center;
+}
+.create-category button, .create-curse button {
+    width: 70%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: aqua;
+    font-weight: bold;
+    font-size: 16px;
+}
+.create-category button:hover, .create-curse button:hover {
+    background-color: #00b9b9;
+}

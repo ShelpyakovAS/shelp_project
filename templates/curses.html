@@ -7,7 +7,13 @@
 {% block body %}
         {% for item in secret %}
             <div class="curse">
-                <h1>{{item.name}}(Тип: {{item.category.name}})</h1>
+                <table>
+                   <tr>
+                       <td>
+                           <h1>{{item.name}}<br>(Тип: {{item.category.name}})</h1>
+                       </td>
+                   </tr>
+                </table>
             </div>
         {% endfor %}
 

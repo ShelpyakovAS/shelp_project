@@ -59,8 +59,7 @@ class CreateCategory:
                 name = data['category-name']
                 request["site"].create_category(name)
                 logger.log(request["site"].courses_category)
-        secret = request.get('secret_key', None)
-        return '200 OK', render('create-category.html', secret=secret)
+        return '200 OK', render('create-category.html', secret=request['path'])
 
 
 class CreateCurse:
@@ -74,7 +73,7 @@ class CreateCurse:
                 request["site"].create_course(name, category)
         secret = request.get('secret_key', None)
         logger.log(f'{request["site"].courses} - ЭТО КУРСЫ')
-        return '200 OK', render('create-curse.html', secret=secret)
+        return '200 OK', render('create-curse.html', secret=request['path'])
 
 
 class Error404:
