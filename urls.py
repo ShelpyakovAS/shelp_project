@@ -8,5 +8,5 @@ urls_routes = {
     '/control-panel/': views.ControlPanel(),
     '/create-category/': views.CreateCategory(),
     '/create-curse/': views.CreateCurse(),
-    '/curses/': views.Curses()
+    '/curses/': views.Courses()
 }

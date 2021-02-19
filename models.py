@@ -8,9 +8,16 @@ class Category:
 
 
 class Course:
-    def __init__(self, name, category):
+    def __init__(self, name, category, sub_courses):
         self.name = name
         self.category = category
+        self.sub_courses = sub_courses
+
+
+class SubCourses:
+    def __init__(self):
+        self.parents = []
+        self.children = []
 
 
 class ShelpSite:
@@ -27,23 +34,33 @@ class ShelpSite:
         self.courses_category.append(Category(name))
         print(f'Категория - {name}, успешно создана!')
 
-    def create_course(self, name, category_name):
+    @staticmethod
+    def create_sub_courses(course_name, sub_type):
+        sub_courses = SubCourses()
+        if sub_type == 'parents':
+            sub_courses.parents.append(course_name)
+        else:
+            sub_courses.children.append(course_name)
+        return sub_courses
+
+    def create_course(self, name, category_name, sub_courses=SubCourses()):
         for course in self.courses:
             if name == course.name:
                 print("Данное имя курса уже занято!")
                 return
+        if sub_courses.children != [] or sub_courses.parents != []:
+                for course_name in sub_courses.children:
+                    for course in self.courses:
+                        if course_name == course.name:
+                            course.sub_courses.children.append(course_name)
+                for course_name in sub_courses.parents:
+                    for course in self.courses:
+                        if course_name == course.name:
+                            course.sub_courses.parents.append(course_name)
         if self.courses_category:
-            print("Я ТУТ")
             for category in self.courses_category:
-                print("Я ТУТ")
-                print(category.name)
-                print(type(category.name))
-                print(category_name)
-                print(type(category_name))
-                print(category.name == category_name)
                 if category.name == category_name:
-                    print("Я ТУТ")
-                    self.courses.append(Course(name, category))
+                    self.courses.append(Course(name, category, sub_courses))
                     return
         print("Такой категории курса не существут!")
 

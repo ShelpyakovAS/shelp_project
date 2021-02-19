@@ -1,10 +1,11 @@
 from shelp_framework.templates import render
-from logging_app import Logger
+from logging_app import Logger, debug
 
 
-logger =  Logger('views')
+logger = Logger('views')
 
 
+@debug
 class Index:
 
     def __call__(self, request):
@@ -12,7 +13,7 @@ class Index:
         return '200 OK', render('index.html', secret=secret)
 
 
-class Curses:
+class Courses:
 
     def __call__(self, request):
         secret = request["site"].courses
@@ -70,7 +71,13 @@ class CreateCurse:
             if data:
                 name = data['curse-name']
                 category = data['category']
-                request["site"].create_course(name, category)
+                creation_type = data['creation-type']
+                if creation_type == 'new':
+                    request["site"].create_course(name, category)
+                else:
+                    sub_courses = request["site"].create_sub_courses(data['sub-curse'], data['creation-type'])
+                    print(f"ASDASDASDASDASD ____ {data['sub-curse'], data['creation-type']}  ")
+                    request["site"].create_course(name, category, sub_courses)
         secret = request.get('secret_key', None)
         logger.log(f'{request["site"].courses} - ЭТО КУРСЫ')
         return '200 OK', render('create-curse.html', secret=request['path'])

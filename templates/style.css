@@ -69,6 +69,15 @@ body {
 .create-category input::placeholder, .create-curse input::placeholder {
     text-align: center;
 }
+.create-category select, .create-curse select {
+    width: 100%;
+    padding: 10px 0;
+    border: 5px solid #c4e4f2;
+    font-weight: bold;
+}
+.create-curse select option {
+    text-align: center;
+}
 .create-category button, .create-curse button {
     width: 70%;
     margin-top: 10px;

@@ -12,3 +12,9 @@ class Logger:
     def debug(self, text):
         with open(f'logging/{self.file_name}.txt', 'a') as f:
             f.write(f'DEBUG ---> {text} ---> {time.asctime()}\n')
+
+
+def debug(view):
+    print(f'DEBUG ---> {view.__name__} ---> {time.asctime()}')
+    view()
+    return view
