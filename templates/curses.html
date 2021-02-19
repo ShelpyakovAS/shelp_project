@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Меню управления
+{% endblock %}
+
+{% block body %}
+        {% for item in secret %}
+            <div class="curse">
+                <table>
+                   <tr>
+                       <td>
+                           <h1>{{item.name}}<br>(Тип: {{item.category.name}})(Дети: {{item.sub_courses.children}},
+                           Родители: {{item.sub_courses.parents}}</h1>
+                       </td>
+                   </tr>
+                </table>
+            </div>
+        {% endfor %}
+
+{% endblock %}

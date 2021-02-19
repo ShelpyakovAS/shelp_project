@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>{% include "style.css" %}</style>
+</head>
+<body>
+{% include "inc-main-menu.html" %}
+{% block body %}
+{% endblock %}
+</body>
+</html>

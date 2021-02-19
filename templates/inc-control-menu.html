@@ -1,0 +1,12 @@
+<div class="creation-menu">
+    {% if secret == '/create-category/' %}
+        <a class="active-link" href="http://127.0.0.1:8000/create-category/">Создать категорию курса</a>
+    {% else %}
+        <a href="http://127.0.0.1:8000/create-category/">Создать категорию курса</a>
+    {% endif %}
+    {% if secret == '/create-curse/' %}
+        <a class="active-link" href="http://127.0.0.1:8000/create-curse/">Создать курс</a>
+    {% else %}
+        <a href="http://127.0.0.1:8000/create-curse/">Создать курс</a>
+    {% endif %}
+</div>

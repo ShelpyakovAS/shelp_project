@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>about</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}
+О компании
+{% endblock %}
+
+{% block body %}
     <h1>ABOUT</h1>
+    <form method="post">
+        <input type="text" name="title" placeholder="Заголовок">
+        <input type="text" name="text" placeholder="Текст сообщения">
+        <input type="email" name="email" placeholder="email">
+        <button type="submit">Отправить</button>
+    </form>
     <h2>secret: {{secret}}</h2>
-</body>
-</html>
+{% endblock %}

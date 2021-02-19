@@ -1,0 +1,15 @@
+{% extends "base-control-panel.html" %}
+
+{% block body2 %}
+    <form class="create-curse" method="post">
+        <input type="text" name="curse-name" placeholder="Название курса">
+        <input name="category" placeholder="Название категории">
+        <select name="creation-type">
+            <option>new</option>
+            <option>child</option>
+            <option>parent</option>
+        </select>
+        <input name="sub-curse" placeholder="Название подкатегории">
+        <button type="submit">Создать</button>
+    </form>
+{% endblock %}
