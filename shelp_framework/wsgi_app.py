@@ -69,3 +69,24 @@ class Application:
             return body
         else:
             view = Error404()
+
+
+class LogApplication(Application):
+    def __init__(self, urlpatterns, front_controllers):
+        self.application = Application(urlpatterns, front_controllers)
+        super().__init__(urlpatterns, front_controllers)
+
+    def __call__(self, environ, start_response):
+        print('log -- app -- start')
+        return self.application(environ, start_response)
+
+
+class FakeApplication(Application):
+
+    def __init__(self, urlpatterns, front_controllers):
+        self.application = Application(urlpatterns, front_controllers)
+        super().__init__(urlpatterns, front_controllers)
+
+    def __call__(self, environ, start_response):
+        start_response('200 OK', [('Content-Type', 'text/html')])
+        return [b'<h1>Hello from Fake</h1>']

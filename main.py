@@ -1,4 +1,4 @@
-from shelp_framework.wsgi_app import Application
+from shelp_framework.wsgi_app import Application, LogApplication, FakeApplication
 from urls import urls_routes
 
 
@@ -13,4 +13,7 @@ front_controllers = [
     secret_controller
 ]
 
-application = Application(urls_routes, front_controllers)
+application = LogApplication(urls_routes, front_controllers)
+
+fake_app = FakeApplication(urls_routes, front_controllers)
+
