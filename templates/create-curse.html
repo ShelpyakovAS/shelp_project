@@ -2,14 +2,26 @@
 
 {% block body2 %}
     <form class="create-curse" method="post">
-        <input type="text" name="curse-name" placeholder="Название курса">
-        <input name="category" placeholder="Название категории">
-        <select name="creation-type">
+        <label for="course-name">Введите название нового курса</label>
+        <input id="course-name" type="text" name="course-name" placeholder="Название курса">
+        <label for="category">Выберите название категории курса</label>
+        <select id="category" name="category">
+            {% for item in secret['site'].courses_category %}
+                <option>{{item.name}}</option>
+            {% endfor %}
+        </select>
+        <label for="creation-type">Выберите тип создания: new, parent, child</label>
+        <select id="creation-type" name="creation-type">
             <option>new</option>
             <option>child</option>
             <option>parent</option>
         </select>
-        <input name="sub-curse" placeholder="Название подкатегории">
+        <label for="sub-course">Выберите parent-child-курс</label>
+        <select id="sub-course" name="sub-course">
+            {% for item in secret['site'].courses %}
+                <option>{{item.name}}</option>
+            {% endfor %}
+        </select>
         <button type="submit">Создать</button>
     </form>
 {% endblock %}

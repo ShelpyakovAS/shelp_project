@@ -2,7 +2,8 @@
 
 {% block body2 %}
     <form class="create-category" method="post">
-        <input type="text" name="category-name" placeholder="Название категории">
+        <label for="category-name">Введите название категории курса</label>
+        <input id="category-name" type="text" name="category-name" placeholder="Название категории">
         <button type="submit">Создать</button>
     </form>
 {% endblock %}

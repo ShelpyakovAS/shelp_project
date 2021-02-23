@@ -37,7 +37,6 @@ body {
 .curse {
     display: inline-block;
     width: 45%;
-    height: 250px;
     background-color: aquamarine;
     border: 5px solid #9003f7;
 }

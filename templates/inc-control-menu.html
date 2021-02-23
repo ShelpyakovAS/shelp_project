@@ -1,12 +1,22 @@
 <div class="creation-menu">
-    {% if secret == '/create-category/' %}
+    {% if secret['path'] == '/create-category/' %}
         <a class="active-link" href="http://127.0.0.1:8000/create-category/">Создать категорию курса</a>
     {% else %}
         <a href="http://127.0.0.1:8000/create-category/">Создать категорию курса</a>
     {% endif %}
-    {% if secret == '/create-curse/' %}
+    {% if secret['path'] == '/create-curse/' %}
         <a class="active-link" href="http://127.0.0.1:8000/create-curse/">Создать курс</a>
     {% else %}
         <a href="http://127.0.0.1:8000/create-curse/">Создать курс</a>
+    {% endif %}
+    {% if secret['path'] == '/enroll-course/' %}
+        <a class="active-link" href="http://127.0.0.1:8000/enroll-course/">Записать на курс</a>
+    {% else %}
+        <a href="http://127.0.0.1:8000/enroll-course/">Записать на курс</a>
+    {% endif %}
+    {% if secret['path'] == '/create-user/' %}
+        <a class="active-link" href="http://127.0.0.1:8000/create-user/">Создать пользователя</a>
+    {% else %}
+        <a href="http://127.0.0.1:8000/create-user/">Создать пользователя</a>
     {% endif %}
 </div>

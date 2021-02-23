@@ -1,7 +1,29 @@
 <div class="main-menu">
-    <a href="http://127.0.0.1:8000/">Главная</a>
-    <a href="http://127.0.0.1:8000/curses/">Курсы</a>
-    <a href="http://127.0.0.1:8000/about/">О компании</a>
-    <a href="http://127.0.0.1:8000/other/">Дополнительно</a>
-    <a href="http://127.0.0.1:8000/control-panel/">Меню управления</a>
+    {% if secret['path'] == '/' %}
+        <a class="active-link" href="http://127.0.0.1:8000/">Главная</a>
+    {% else %}
+        <a href="http://127.0.0.1:8000/">Главная</a>
+    {% endif %}
+    {% if secret['path'] == '/curses/' %}
+        <a class="active-link" href="http://127.0.0.1:8000/curses/">Курсы</a>
+    {% else %}
+        <a href="http://127.0.0.1:8000/curses/">Курсы</a>
+    {% endif %}
+    {% if secret['path'] == '/about/' %}
+        <a class="active-link" href="http://127.0.0.1:8000/about/">О компании</a>
+    {% else %}
+        <a href="http://127.0.0.1:8000/about/">О компании</a>
+    {% endif %}
+    {% if secret['path'] == '/other/' %}
+        <a class="active-link" href="http://127.0.0.1:8000/other/">Дополнительно</a>
+    {% else %}
+        <a href="http://127.0.0.1:8000/other/">Дополнительно</a>
+    {% endif %}
+    {% if secret['path'] == '/control-panel/' or secret['path'] == '/create-category/' or
+        secret['path'] == '/create-curse/' or secret['path'] == '/enroll-course/' or
+        secret['path'] == '/create-user/' %}
+        <a class="active-link" href="http://127.0.0.1:8000/control-panel/">Меню управления</a>
+    {% else %}
+        <a href="http://127.0.0.1:8000/control-panel/">Меню управления</a>
+    {% endif %}
 </div>

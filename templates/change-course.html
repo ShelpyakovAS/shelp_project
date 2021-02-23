@@ -1,0 +1,40 @@
+{% extends "base-control-panel.html" %}
+
+{% block body2 %}
+    {% for course in secret['site'].courses %}
+        {% if course.name == secret['request_params']['name'] %}
+            <form class="create-curse" method="post">
+                <select name="course-name" hidden><option>{{course.name}}</option></select>
+                <label for="new-course-name">Имя курса: {{course.name}} </label>
+                <input id="new-course-name" type="text" name="new-course-name" placeholder="Новое имя">
+                <label for="category">Категории курса: {{course.category}} <br>Изменить категории курса</label>
+                <select id="category" name="category">
+                        <option>no change</option>
+                    {% for item in secret['site'].courses_category %}
+                        <option>{{item.name}}</option>
+                    {% endfor %}
+                </select>
+                <label for="change-sub-course">
+                    Список children: {% for item in course.sub_courses.children %}{{item.name}} {% endfor %} <br>
+                    Список parents: {% for item in course.sub_courses.parents %}{{item.name}} {% endfor %} <br>
+                    Выбери действие:
+                </label>
+                <select id="change-sub-course" name="change-sub-course">
+                    <option>no-change</option>
+                    <option>add-child</option>
+                    <option>add-parent</option>
+                    <option>del-parent</option>
+                    <option>del-child</option>
+                </select>
+                <label for="sub-course">Выберите название parent-child-курс</label>
+                <select id="sub-course" name="sub-course">
+                        <option>none</option>
+                    {% for item in secret['site'].courses %}
+                        <option>{{item.name}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Изменить</button>
+            </form>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

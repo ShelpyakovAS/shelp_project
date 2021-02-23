@@ -1,0 +1,27 @@
+{% extends "base-control-panel.html" %}
+
+{% block body2 %}
+    <form class="create-category" method="post">
+        <label for="user-name">Пользователь</label>
+        <select id="user-name" name="user-name">
+            {% for item in secret['site'].teachers %}
+                <option>учитель {{item.name}} {{item.surname}}</option>
+            {% endfor %}
+            {% for item in secret['site'].students %}
+                <option>студент {{item.name}} {{item.surname}}</option>
+            {% endfor %}
+        </select>
+        <label for="change-type">Записать или удалить</label>
+        <select id="change-type" name="change-type">
+            <option>add</option>
+            <option>del</option>
+        </select>
+        <label for="course-name">Выберите курс</label>
+        <select id="course-name" name="course-name">
+            {% for item in secret['site'].courses %}
+                <option>{{item.name}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Записать</button>
+    </form>
+{% endblock %}

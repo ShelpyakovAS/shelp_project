@@ -5,13 +5,20 @@
 {% endblock %}
 
 {% block body %}
-        {% for item in secret %}
+        {% for item in secret["site"].courses %}
             <div class="curse">
                 <table>
                    <tr>
                        <td>
-                           <h1>{{item.name}}<br>(Тип: {{item.category.name}})(Дети: {{item.sub_courses.children}},
-                           Родители: {{item.sub_courses.parents}}</h1>
+                           <h1>{{item.name}}<br>Тип: {{item.category.name}}<br>
+                               Дети: {% for course in item.sub_courses.children %}{{course.name}} {% endfor %}<br>
+                               Родители: {% for course in item.sub_courses.parents %}{{course.name}} {% endfor %}<br>
+                               Учителя: {% for teacher in item.teachers %} {{teacher.name}} {{teacher.surname}}
+                               {% endfor %}<br>
+                               Ученики: {% for student in item.students %} {{student.name}} {{student.surname}}
+                               {% endfor %}
+                           </h1>
+                           <a href="http://127.0.0.1:8000/change-course/?name={{item.name}}">изменить курс</a>
                        </td>
                    </tr>
                 </table>
