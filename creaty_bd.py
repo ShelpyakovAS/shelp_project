@@ -29,3 +29,29 @@ class CreatyBase:
         statement = f'CREATE TABLE students (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, name VARCHAR (32))' \
                     f'age NUMBER'
         self.cursor.execute(statement)
+
+        statement = f'DROP TABLE IF EXISTS teachers'
+        self.cursor.execute(statement)
+        statement = f'CREATE TABLE teachers (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, name VARCHAR (32))' \
+                    f'age NUMBER'
+        self.cursor.execute(statement)
+
+        statement = f'DROP TABLE IF EXISTS categorys'
+        self.cursor.execute(statement)
+        statement = f'CREATE TABLE categorys (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, name VARCHAR (32))'
+        self.cursor.execute(statement)
+
+        statement = f'DROP TABLE IF EXISTS subcourses'
+        self.cursor.execute(statement)
+        statement = f'CREATE TABLE subcourses (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, ' \
+                    f'parents TEXT, children TEXT)'
+        self.cursor.execute(statement)
+
+        statement = f'DROP TABLE IF EXISTS courses'
+        self.cursor.execute(statement)
+        statement = f'CREATE TABLE courses (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, ' \
+                    f'name VARCHAR (32), category TEXT, sub_courses TEXT, students TEXT, teachers TEXT)'
+        '''Везде где TEXT нужны списки id'''
+        self.cursor.execute(statement)
+
+
