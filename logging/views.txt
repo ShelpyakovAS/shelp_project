@@ -531,3 +531,4 @@ LOG ---> [] - ЭТО КУРСЫ ---> Tue Feb 23 18:56:02 2021
 LOG ---> [<models.Course object at 0x7f45e714d310>] - ЭТО КУРСЫ ---> Tue Feb 23 18:56:04 2021
 LOG ---> [<models.Course object at 0x7f45e714d310>] - ЭТО КУРСЫ ---> Tue Feb 23 18:56:13 2021
 LOG ---> [<models.Course object at 0x7f45e714d310>, <models.Course object at 0x7f45e7151d90>] - ЭТО КУРСЫ ---> Tue Feb 23 18:56:18 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Fri Mar  5 17:38:05 2021

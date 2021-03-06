@@ -28,10 +28,10 @@ class Category:
 
 class Course:
 
-    def __init__(self, name, category, sub_courses):
+    def __init__(self, name, category, sub_course):
         self.name = name
         self.category = category
-        self.sub_courses = sub_courses
+        self.sub_courses = sub_course
         self.students = []
         self.teachers = []
 
@@ -97,7 +97,7 @@ class Course:
             self.sub_courses.children.remove(self_course)
 
 
-class SubCourses:
+class SubCourse:
     def __init__(self):
         self.parents = []
         self.children = []
@@ -145,7 +145,7 @@ class ShelpSite:
 
     @staticmethod
     def create_sub_courses(course, sub_type):
-        sub_courses = SubCourses()
+        sub_courses = SubCourse()
         if sub_type == 'parent':
             sub_courses.parents.append(course)
         else:
@@ -154,7 +154,7 @@ class ShelpSite:
 
     @staticmethod
     def create_empty_sub_courses():
-        sub_courses = SubCourses()
+        sub_courses = SubCourse()
         return sub_courses
 
     def create_course(self, name, category_name, sub_courses):
