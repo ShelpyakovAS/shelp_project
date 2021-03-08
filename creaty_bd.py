@@ -1,57 +1,80 @@
 import sqlite3
-from models import Teacher, Student, Course, SubCourse, Category
 
 sdb_connection = sqlite3.connect('shelp_base.db')
-
-test_stubent = Student('вася', 'пупкин', 33)
-test_teacher = Teacher('не вася', ' не пупкин', 34)
-test_сategory = Category('имя категории')
-test_subcourse = SubCourse()
-test_course = Course('имя курса', test_сategory, test_subcourse)
-
 
 class CreatyBase:
 
     def __init__(self):
         self.sdb_connection = sdb_connection
         self.cursor = sdb_connection.cursor()
-        self.table_dict = {
-            'students': Student,
-            'teachers': Teacher,
-            'categorys': Category,
-            'courses': Course,
-            'subcourses': SubCourse
-        }
 
     def __call__(self):
+        statement = f'PRAGMA foreign_keys = on'
+        self.cursor.execute(statement)
+
         statement = f'DROP TABLE IF EXISTS students'
         self.cursor.execute(statement)
-        statement = f'CREATE TABLE students (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, name VARCHAR (32))' \
-                    f'age NUMBER'
+        statement = f'CREATE TABLE students (' \
+                    f'id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, ' \
+                    f'name VARCHAR (32), ' \
+                    f'surname VARCHAR (32), ' \
+                    f'age INTEGER NOT NULL)'
         self.cursor.execute(statement)
 
         statement = f'DROP TABLE IF EXISTS teachers'
         self.cursor.execute(statement)
-        statement = f'CREATE TABLE teachers (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, name VARCHAR (32))' \
-                    f'age NUMBER'
+        statement = f'CREATE TABLE teachers (' \
+                    f'id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, ' \
+                    f'name VARCHAR (32), ' \
+                    f'surname VARCHAR (32), ' \
+                    f'age INTEGER NOT NULL)'
         self.cursor.execute(statement)
 
-        statement = f'DROP TABLE IF EXISTS categorys'
+        statement = f'DROP TABLE IF EXISTS categories'
         self.cursor.execute(statement)
-        statement = f'CREATE TABLE categorys (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, name VARCHAR (32))'
-        self.cursor.execute(statement)
-
-        statement = f'DROP TABLE IF EXISTS subcourses'
-        self.cursor.execute(statement)
-        statement = f'CREATE TABLE subcourses (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, ' \
-                    f'parents TEXT, children TEXT)'
+        statement = f'CREATE TABLE categories (' \
+                    f'id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, ' \
+                    f'name VARCHAR (32))'
         self.cursor.execute(statement)
 
         statement = f'DROP TABLE IF EXISTS courses'
         self.cursor.execute(statement)
-        statement = f'CREATE TABLE courses (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, ' \
-                    f'name VARCHAR (32), category TEXT, sub_courses TEXT, students TEXT, teachers TEXT)'
-        '''Везде где TEXT нужны списки id'''
+        statement = f'CREATE TABLE courses (' \
+                    f'id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, ' \
+                    f'name VARCHAR (32), ' \
+                    f'category_id INTEGER PRIMARY KEY, ' \
+                    f'FOREIGN KEY (category_id) references categories(id))'
         self.cursor.execute(statement)
 
+        statement = f'DROP TABLE IF EXISTS curses_teachers'
+        self.cursor.execute(statement)
+
+        statement = f'CREATE TABLE curses_teachers (' \
+                    f'course_id INTEGER PRIMARY KEY, ' \
+                    f'teacher_id INTEGER PRIMARY KEY' \
+                    f'FOREIGN KEY (course_id) references courses(id)' \
+                    f'FOREIGN KEY (teacher_id) references teachers(id))'
+        self.cursor.execute(statement)
+
+        statement = f'DROP TABLE IF EXISTS curses_students'
+        self.cursor.execute(statement)
+
+        statement = f'CREATE TABLE curses_teachers (' \
+                    f'course_id INTEGER PRIMARY KEY, ' \
+                    f'students_id INTEGER PRIMARY KEY' \
+                    f'FOREIGN KEY (course_id) references courses(id)' \
+                    f'FOREIGN KEY (students_id) references students(id))'
+        self.cursor.execute(statement)
+
+        statement = f'DROP TABLE IF EXISTS subcourses'
+        self.cursor.execute(statement)
+
+        statement = f'CREATE TABLE subcourses (' \
+                    f'parent_id INTEGER PRIMARY KEY, ' \
+                    f'child_id INTEGER PRIMARY KEY' \
+                    f'FOREIGN KEY (parent_id) references courses(id)' \
+                    f'FOREIGN KEY (child_id) references courses(id))'
+        self.cursor.execute(statement)
+
+CreatyBase()
 

@@ -3,10 +3,6 @@ class User:
         self.name = name
         self.surname = surname
         self.age = age
-        self.courses = []
-
-    def add_course(self, course):
-        self.courses.append(course)
 
 
 class Teacher(User):
@@ -18,11 +14,8 @@ class Student(User):
 
 
 class Category:
-    add_id = 0
 
     def __init__(self, name):
-        self.category_id = Category.add_id
-        Category.add_id += 1
         self.name = name
 
 
