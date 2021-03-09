@@ -538,3 +538,68 @@ LOG ---> [<models.Course object at 0x7fec8d860fd0>] - ЭТО КУРСЫ ---> Tue
 LOG ---> [<models.Category object at 0x7fec8d860e50>, <models.Category object at 0x7fec8d860c10>] ---> Tue Mar  9 00:06:07 2021
 LOG ---> [<models.Course object at 0x7fec8d860fd0>] - ЭТО КУРСЫ ---> Tue Mar  9 00:06:08 2021
 LOG ---> [<models.Course object at 0x7fec8d860fd0>, <models.Course object at 0x7fec8d80c0a0>] - ЭТО КУРСЫ ---> Tue Mar  9 00:06:18 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:09:59 2021
+LOG ---> [<models.Category object at 0x7f338aeb6bb0>] ---> Tue Mar  9 16:10:02 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:10:03 2021
+LOG ---> [<models.Category object at 0x7f18e2f73d90>] ---> Tue Mar  9 16:25:47 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:25:48 2021
+LOG ---> [<models.Course object at 0x7f18e2f22cd0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:25:50 2021
+LOG ---> [<models.Course object at 0x7f18e2f22cd0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:25:54 2021
+LOG ---> [<models.Category object at 0x7fe984d77520>] ---> Tue Mar  9 16:28:29 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:28:30 2021
+LOG ---> [<models.Course object at 0x7fe984da9340>] - ЭТО КУРСЫ ---> Tue Mar  9 16:28:32 2021
+LOG ---> [<models.Category object at 0x7fa30d4a73a0>] ---> Tue Mar  9 16:32:07 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:32:08 2021
+LOG ---> [<models.Course object at 0x7fa30d5160a0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:32:10 2021
+LOG ---> [<models.Course object at 0x7fa30d5160a0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:32:51 2021
+LOG ---> [<models.Course object at 0x7fa30d5160a0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:34:15 2021
+LOG ---> [<models.Course object at 0x7fa30d5160a0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:34:19 2021
+LOG ---> [<models.Category object at 0x7f8eb0655730>] ---> Tue Mar  9 16:36:01 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:36:02 2021
+LOG ---> [<models.Course object at 0x7f8eb0655640>] - ЭТО КУРСЫ ---> Tue Mar  9 16:36:03 2021
+LOG ---> [<models.Category object at 0x7f4ad1ef5bb0>] ---> Tue Mar  9 16:37:06 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:37:07 2021
+LOG ---> [<models.Course object at 0x7f4ad1ef56a0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:37:08 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:39:56 2021
+LOG ---> [<models.Category object at 0x7f72325c56a0>] ---> Tue Mar  9 16:39:59 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:40:00 2021
+LOG ---> [<models.Course object at 0x7f72325d3520>] - ЭТО КУРСЫ ---> Tue Mar  9 16:40:03 2021
+LOG ---> [<models.Category object at 0x7f3c176d5850>] ---> Tue Mar  9 16:40:50 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:40:51 2021
+LOG ---> [<models.Course object at 0x7f3c176d5d90>] - ЭТО КУРСЫ ---> Tue Mar  9 16:40:53 2021
+LOG ---> [<models.Category object at 0x7f6d65b14700>] ---> Tue Mar  9 16:47:17 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:47:18 2021
+LOG ---> [<models.Course object at 0x7f6d65aa64f0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:47:20 2021
+LOG ---> [<models.Category object at 0x7f38cffc4bb0>] ---> Tue Mar  9 16:48:51 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:48:52 2021
+LOG ---> [<models.Course object at 0x7f38cff562b0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:48:54 2021
+LOG ---> [<models.Category object at 0x7fac9b914bb0>] ---> Tue Mar  9 16:50:04 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:50:05 2021
+LOG ---> [<models.Course object at 0x7fac9b8a62b0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:50:06 2021
+LOG ---> [<models.Category object at 0x7f86c2e94700>] ---> Tue Mar  9 16:50:39 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:50:40 2021
+LOG ---> [<models.Course object at 0x7f86c2e244f0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:50:42 2021
+LOG ---> [<models.Category object at 0x7f3913d54bb0>] ---> Tue Mar  9 16:52:48 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:52:49 2021
+LOG ---> [<models.Course object at 0x7f3913ce62b0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:52:53 2021
+LOG ---> [<models.Category object at 0x7f7ac1184bb0>] ---> Tue Mar  9 16:53:41 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:53:42 2021
+LOG ---> [<models.Course object at 0x7f7ac11162b0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:53:44 2021
+LOG ---> [<models.Category object at 0x7f7b96fb6700>] ---> Tue Mar  9 16:54:53 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:54:54 2021
+LOG ---> [<models.Course object at 0x7f7b96fb6640>] - ЭТО КУРСЫ ---> Tue Mar  9 16:54:56 2021
+LOG ---> [<models.Category object at 0x7fd288934370>] ---> Tue Mar  9 16:55:52 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:55:52 2021
+LOG ---> [<models.Course object at 0x7fd288927940>] - ЭТО КУРСЫ ---> Tue Mar  9 16:55:56 2021
+LOG ---> [<models.Course object at 0x7fd288927940>, <models.Course object at 0x7fd288996af0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:56:00 2021
+LOG ---> [<models.Course object at 0x7fd288927940>, <models.Course object at 0x7fd288996af0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:56:07 2021
+LOG ---> [<models.Category object at 0x7f699c815bb0>] ---> Tue Mar  9 16:57:09 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 16:57:10 2021
+LOG ---> [<models.Course object at 0x7f699c8156a0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:57:12 2021
+LOG ---> [<models.Course object at 0x7f699c8156a0>, <models.Course object at 0x7f699c7a5310>] - ЭТО КУРСЫ ---> Tue Mar  9 16:57:15 2021
+LOG ---> [<models.Course object at 0x7f699c8156a0>, <models.Course object at 0x7f699c7a5310>, <models.Course object at 0x7f699c8154f0>] - ЭТО КУРСЫ ---> Tue Mar  9 16:57:19 2021
+LOG ---> [<models.Category object at 0x7f150fce4be0>] ---> Tue Mar  9 17:01:27 2021
+LOG ---> [] - ЭТО КУРСЫ ---> Tue Mar  9 17:01:28 2021
+LOG ---> [<models.Course object at 0x7f150fc763a0>] - ЭТО КУРСЫ ---> Tue Mar  9 17:01:30 2021
+LOG ---> [<models.Course object at 0x7f150fc763a0>, <models.Course object at 0x7f150fce41f0>] - ЭТО КУРСЫ ---> Tue Mar  9 17:01:33 2021
+LOG ---> [<models.Course object at 0x7f150fc763a0>, <models.Course object at 0x7f150fce41f0>, <models.Course object at 0x7f150fce4b50>] - ЭТО КУРСЫ ---> Tue Mar  9 17:01:37 2021

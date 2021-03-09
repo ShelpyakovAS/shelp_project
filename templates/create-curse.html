@@ -19,7 +19,7 @@
         <label for="sub-course">Выберите parent-child-курс</label>
         <select id="sub-course" name="sub-course">
             {% for item in secret['site'].courses %}
-                <option>{{item.name}}</option>
+                <option>{{item.id}} {{item.name}}</option>
             {% endfor %}
         </select>
         <button type="submit">Создать</button>

@@ -68,7 +68,7 @@ class CreateCurse:
                     sub_courses = request['site'].create_empty_sub_courses()
                     request["site"].create_course(name, category, sub_courses)
                 else:
-                    sub_courses = request["site"].create_sub_courses(request['site'].take_course(data['sub-course']),
+                    sub_courses = request["site"].create_sub_courses(request['site'].take_course(int(data['sub-course'].split('+')[0])),
                                                                      data['creation-type'])
                     request["site"].create_course(name, category, sub_courses)
         logger.log(f'{request["site"].courses} - ЭТО КУРСЫ')

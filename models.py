@@ -1,3 +1,10 @@
+import sqlite3
+
+
+
+sdb_connection = sqlite3.connect('shelp_base.db')
+
+
 class User:
     def __init__(self, name, surname, age):
         self.name = name
@@ -67,49 +74,33 @@ class Course:
     def add_child(self, self_course, sub_course):
         print(f'СМОТРИМ СЮДА {self.sub_courses} {self_course.sub_courses} {sub_course.sub_courses}')
         if self == self_course:
-            self.sub_courses.children.append(sub_course)
+            self.sub_courses.children.append(sub_course.id)
         elif self == sub_course:
-            self.sub_courses.parents.append(self_course)
+            self.sub_courses.parents.append(self_course.id)
 
     def add_parent(self, self_course, sub_course):
         if self == self_course:
-            self.sub_courses.parents.append(sub_course)
+            self.sub_courses.parents.append(sub_course.id)
         elif self == sub_course:
-            self.sub_courses.children.append(self_course)
+            self.sub_courses.children.append(self_course.id)
 
     def del_child(self, self_course, sub_course):
         if self == self_course:
-            self.sub_courses.children.remove(sub_course)
+            self.sub_courses.children.remove(sub_course.id)
         elif self == sub_course:
-            self.sub_courses.parents.remove(self_course)
+            self.sub_courses.parents.remove(self_course.id)
 
     def del_parent(self, self_course, sub_course):
         if self == self_course:
-            self.sub_courses.parents.remove(sub_course)
+            self.sub_courses.parents.remove(sub_course.id)
         elif self == sub_course:
-            self.sub_courses.children.remove(self_course)
+            self.sub_courses.children.remove(self_course.id)
 
 
 class SubCourse:
     def __init__(self):
-        self.parents = []
-        self.children = []
-
-    @staticmethod
-    def parent(course, courses):
-        pass
-
-    @staticmethod
-    def child(course, courses):
-        pass
-
-    @staticmethod
-    def del_parent(course, courses):
-        pass
-
-    @staticmethod
-    def del_child(course, courses):
-        pass
+        self.parents_id = []
+        self.children_id = []
 
 
 class ShelpSite:
@@ -117,8 +108,8 @@ class ShelpSite:
     def __init__(self):
         self.teachers = []
         self.students = []
-        self.courses = []
         self.courses_category = []
+        self.courses = []
         self.user_types = {
             'teacher': [self.teachers, Teacher],
             'student': [self.students, Student],
@@ -140,9 +131,9 @@ class ShelpSite:
     def create_sub_courses(course, sub_type):
         sub_courses = SubCourse()
         if sub_type == 'parent':
-            sub_courses.parents.append(course)
+            sub_courses.parents_id.append(course.id)
         else:
-            sub_courses.children.append(course)
+            sub_courses.children_id.append(course.id)
         return sub_courses
 
     @staticmethod
@@ -155,19 +146,21 @@ class ShelpSite:
             if name == course.name:
                 print("Данное имя курса уже занято!")
                 return
-        if sub_courses.children != [] or sub_courses.parents != []:
-            for sub_course in sub_courses.children:
+        if sub_courses.children_id != [] or sub_courses.parents_id != []:
+            for sub_course in sub_courses.children_id:
                 for course in self.courses:
-                    if sub_course.name == course.name:
-                        course.sub_courses.parents.append(sub_course)
-            for sub_course in sub_courses.parents:
+                    if self.take_course(sub_course).name == course.name:
+                        course.sub_courses.parents_id.append(sub_course)
+            for sub_course in sub_courses.parents_id:
                 for course in self.courses:
-                    if sub_course.name == course.name:
-                        course.sub_courses.children.append(course)
+                    if self.take_course(sub_course).name == course.name:
+                        course.sub_courses.children_id.append(course.id)
         if self.courses_category:
             for category in self.courses_category:
                 if category.name == category_name:
-                    self.courses.append(Course(name, category, sub_courses))
+                    created_course = Course(name, category, sub_courses)
+                    created_course.id = len(self.courses) + 1
+                    self.courses.append(created_course)
                     return
         print("Такой категории курса не существут!")
 
@@ -177,10 +170,10 @@ class ShelpSite:
                 if category.name == category_name:
                     return category
 
-    def take_course(self, course_name):
+    def take_course(self, course_id):
         if self.courses:
             for course in self.courses:
-                if course.name == course_name:
+                if course.id == course_id:
                     return course
 
     def take_user(self, name, surname):

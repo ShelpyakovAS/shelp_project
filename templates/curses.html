@@ -11,8 +11,8 @@
                    <tr>
                        <td>
                            <h1>{{item.name}}<br>Тип: {{item.category.name}}<br>
-                               Дети: {% for course in item.sub_courses.children %}{{course.name}} {% endfor %}<br>
-                               Родители: {% for course in item.sub_courses.parents %}{{course.name}} {% endfor %}<br>
+                               Дети: {% for child_id in item.sub_courses.children_id %}{{secret["site"].take_course(child_id).name}} {% endfor %}<br>
+                               Родители: {% for parent_id in item.sub_courses.parents_id %}{{secret["site"].take_course(parent_id).name}} {% endfor %}<br>
                                Учителя: {% for teacher in item.teachers %} {{teacher.name}} {{teacher.surname}}
                                {% endfor %}<br>
                                Ученики: {% for student in item.students %} {{student.name}} {{student.surname}}
